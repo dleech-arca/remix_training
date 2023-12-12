@@ -1,6 +1,6 @@
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
-import { isRouteErrorResponse, Link, useActionData, useRouteError, } from "@remix-run/react";
+import { isRouteErrorResponse, Form, Link, useActionData, useRouteError, } from "@remix-run/react";
 
 import { db } from "~/utils/db.server";
 import { badRequest } from "~/utils/request.server";
@@ -74,7 +74,7 @@ export default function NewJokeRoute() {
     return (
         <div>
             <p>Add your own hilarious joke</p>
-            <form method="post">
+            <Form method="post">
                 <div>
                     <label>
                         Name {" "}
@@ -141,7 +141,7 @@ export default function NewJokeRoute() {
                         Add
                     </button>
                 </div>
-            </form>
+            </Form>
         </div>
     );
 }
